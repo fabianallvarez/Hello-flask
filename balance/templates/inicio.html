@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Balance App</title>
-  <link rel="stylesheet" href="static/flat-remix.css">
+  <link rel="stylesheet" href="static/css/flat-remix.css">
   <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
@@ -14,26 +14,28 @@
   <header>
    Balance de movimientos
   </header>
+
   <nav>
     Inicio | Nuevo
   </nav>
-
-  <table class="paper">
-    <tr>
-      <th>Fecha</th>
-      <th>Concepto</th>
-      <th>Tipo</th>
-      <th>Cantidad</th>
-    </tr>
-    {% for mov in movs %}
-    <tr>
-      <td>{{ mov.fecha }}</td>
-      <td>{{ mov.concepto }}</td>
-      <td>{{ mov.ingreso_gasto }}</td>
-      <td>{{ mov.cantidad }}</td>
-    </tr>
-    {% endfor %}
-  </table>
+<main>
+    <table class="paper">
+      <tr>
+        <th class="titulo-tabla">Fecha</th>
+        <th class="titulo-tabla">Concepto</th>
+        <th class="titulo-tabla">Tipo</th>
+        <th class="titulo-tabla numero">Cantidad</th>
+      </tr>
+      {% for mov in movs %}
+      <tr>
+        <td>{{ mov.fecha }}</td>
+        <td>{{ mov.concepto }}</td>
+        <td>{{ mov.ingreso_gasto }}</td>
+        <td class="numero">{{ mov.cantidad }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+</main>
 
   <footer class="pie-de-pagina">2022 Bootcamp Cero.</footer>
 </body>
